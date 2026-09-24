@@ -1,6 +1,6 @@
 # Syncfusion FileManager Providers
 
-The React [File Manager](https://www.syncfusion.com/react-components/react-file-manager) is a component for managing files and folders in a web application. It provides a Windows Explorer-like interface for file operations such as viewing, selecting, uploading, downloading, sorting, filtering, creating, renaming, copying, moving, and deleting files and folders.
+The Syncfusion [File Manager](https://www.syncfusion.com/react-components/react-file-manager) is a component for managing files and folders in a web application. It provides a Windows Explorer-like interface for file operations such as viewing, selecting, uploading, downloading, sorting, filtering, creating, renaming, copying, moving, and deleting files and folders.
 
 The service supports read, details, download, upload, create, delete, copy, move, rename, search, and image preview operations.
 
