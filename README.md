@@ -1,8 +1,12 @@
 # Syncfusion FileManager Providers
 
-This repository contains a unified service and Docker image for Syncfusion File Manager storage providers. One image supports both Azure Blob Storage and Amazon S3. Select the provider with the `FILEMANAGER_PROVIDER` environment variable.
+The React [File Manager](https://www.syncfusion.com/react-components/react-file-manager) is a component for managing files and folders in a web application. It provides a Windows Explorer-like interface for file operations such as viewing, selecting, uploading, downloading, sorting, filtering, creating, renaming, copying, moving, and deleting files and folders.
+
+The service supports read, details, download, upload, create, delete, copy, move, rename, search, and image preview operations.
 
 The File Manager is supported on multiple platforms including JavaScript, Angular, React, Vue, ASP.NET Core, ASP.NET MVC, TypeScript, and Blazor.
+
+You can deploy the published image directly or create a custom Docker image based on the [Syncfusion File Manager providers repository](https://github.com/SyncfusionExamples/filemanager-providers). The unified image supports both Azure Blob Storage and Amazon S3. Select the provider with the `FILEMANAGER_PROVIDER` environment variable.
 
 ## Supported Providers
 
