@@ -1,10 +1,10 @@
 # Syncfusion FileManager Providers
 
-The Syncfusion [File Manager](https://www.syncfusion.com/react-components/react-file-manager) is a component for managing files and folders in a web application. It provides a Windows Explorer-like interface for file operations such as viewing, selecting, uploading, downloading, sorting, filtering, creating, renaming, copying, moving, and deleting files and folders.
+The Syncfusion [File Manager](https://www.syncfusion.com/javascript-ui-controls/js-file-manager) is a component for managing files and folders in a web application. It provides a Windows Explorer-like interface for file operations such as viewing, selecting, uploading, downloading, sorting, filtering, creating, renaming, copying, moving, and deleting files and folders.
 
 The service supports read, details, download, upload, create, delete, copy, move, rename, search, and image preview operations.
 
-The File Manager is supported on multiple platforms including JavaScript, Angular, React, Vue, ASP.NET Core, ASP.NET MVC, TypeScript, and Blazor.
+The File Manager is supported on multiple platforms including [JavaScript](https://www.syncfusion.com/javascript-ui-controls/js-file-manager), [Angular](https://www.syncfusion.com/angular-components/angular-file-manager), [React](https://www.syncfusion.com/react-components/react-file-manager), [Vue](https://www.syncfusion.com/vue-components/vue-file-manager), [ASP.NET Core](https://www.syncfusion.com/aspnet-core-ui-controls/file-manager), [ASP.NET MVC](https://www.syncfusion.com/aspnet-mvc-ui-controls/file-manager), and [Blazor](https://www.syncfusion.com/blazor-components/blazor-file-manager).
 
 You can deploy the published image directly or create a custom Docker image based on the [Syncfusion File Manager providers repository](https://github.com/SyncfusionExamples/filemanager-providers). The unified image supports both Azure Blob Storage and Amazon S3. Select the provider with the `FILEMANAGER_PROVIDER` environment variable.
 
@@ -42,6 +42,10 @@ Before deploying the service, install [Docker](https://www.docker.com/products/c
 ### macOS
 
 [Install Docker Desktop for macOS](https://docs.docker.com/desktop/setup/install/mac-install/)
+
+### Linux
+
+On Linux, install [Docker Engine](https://docs.docker.com/engine/install/) with the Docker Compose plugin.
 
 Create either an Azure Blob Storage account or an Amazon S3 bucket before starting the service.
 
@@ -140,7 +144,6 @@ The `docker-compose.yml` file contains the service configuration. Set `FILEMANAG
 For Amazon S3, the relevant Compose configuration is:
 
 ```yaml
-version: '3.4' 
 
 services:
   filemanager-provider:
