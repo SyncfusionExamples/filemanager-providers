@@ -102,6 +102,7 @@ Set `FILEMANAGER_PROVIDER` to `amazon-s3`, then provide:
 | `AWS_SECRET_ACCESS_KEY` | Yes | AWS IAM secret access key. |
 | `AWS_BUCKET_NAME` | Yes | S3 bucket name. |
 | `AWS_BUCKET_REGION` | Yes | AWS region containing the bucket. Example: `us-east-1` |
+| `AWS_BUCKET_ROOTPATH` | Yes | Root folder path within the S3 bucket to be used as the File Manager root directory. Example: `department/reports` |
 
 ## Docker Deployment
 
@@ -154,6 +155,7 @@ services:
       AWS_SECRET_ACCESS_KEY: YOUR_AWS_SECRET_ACCESS_KEY
       AWS_BUCKET_NAME: YOUR_AWS_BUCKET_NAME
       AWS_BUCKET_REGION: us-east-1
+      AWS_BUCKET_ROOTPATH: YOUR_AWS_BUCKET_ROOTPATH
     ports:
       - "5000:80"
 ```
