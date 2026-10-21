@@ -16,16 +16,17 @@ public sealed class AmazonS3FileManagerProvider : IFileManagerProvider
         var accessKeyId = Environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID") ?? string.Empty;
         var secretAccessKey = Environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY") ?? string.Empty;
         var region = Environment.GetEnvironmentVariable("AWS_BUCKET_REGION") ?? string.Empty;
-        if (string.IsNullOrWhiteSpace(bucketName) || string.IsNullOrWhiteSpace(accessKeyId) || string.IsNullOrWhiteSpace(secretAccessKey) || string.IsNullOrWhiteSpace(region))
-            throw new InvalidOperationException("AWS bucket, access key, secret key, and region are required.");
+        var rootPath = Environment.GetEnvironmentVariable("AWS_BUCKET_ROOTPATH") ?? string.Empty;
+        if (string.IsNullOrWhiteSpace(bucketName) || string.IsNullOrWhiteSpace(accessKeyId) || string.IsNullOrWhiteSpace(secretAccessKey) || string.IsNullOrWhiteSpace(region) || string.IsNullOrWhiteSpace(rootPath))
+            throw new InvalidOperationException("AWS bucket, access key, secret key, region and rootPath are required.");
 
         // The SDK provider creates its TransferUtility before RegisterAmazonS3 sets
         // the static client. Register once, then create the active model so it
         // captures the initialized client just like the standalone controller.
         var registrationOperation = new AmazonS3FileProvider();
-        registrationOperation.RegisterAmazonS3(bucketName, accessKeyId, secretAccessKey, region);
+        registrationOperation.RegisterAmazonS3(bucketName, accessKeyId, secretAccessKey, region, rootPath);
         _operation = new AmazonS3FileProvider();
-        _operation.RegisterAmazonS3(bucketName, accessKeyId, secretAccessKey, region);
+        _operation.RegisterAmazonS3(bucketName, accessKeyId, secretAccessKey, region, rootPath);
     }
 
     public object? FileOperations(object args)
